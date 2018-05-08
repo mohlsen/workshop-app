@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-stat-filters',
@@ -7,7 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StatFiltersComponent implements OnInit {
 
-  constructor() { }
+  filterGroup: FormGroup;
+
+  constructor(fb: FormBuilder) {
+
+    this.filterGroup = fb.group({
+      title: ['', Validators.minLength(3)],
+      author: ['', [Validators.maxLength(5)]]
+    });
+
+  }
+
+  applyFilter(): void {
+    console.log('Form Submitted', this.filterGroup.value);
+  }
 
   ngOnInit() {
   }

@@ -1,3 +1,22 @@
-<p>
-  stat-filters works!
-</p>
+<section class="card">
+  <div class="card-content">
+    <div class="card-title">Video Filter</div>
+    <form [formGroup]="filterGroup" (ngSubmit)="applyFilter()">
+        <div>
+          <label for="videoTitle">Title:</label>
+          <input id="videoTitle" type="text" formControlName="title">
+          <div *ngIf="filterGroup.get('title')?.invalid && filterGroup.get('title')?.touched">
+            Title must be 3 characters
+          </div>
+        </div>
+        <div>
+          <label for="videoAuthor">Author:</label>
+          <input id="videoAuthor" type="text" formControlName="author">
+          <div *ngIf="filterGroup.get('author')?.invalid && filterGroup.get('author')?.touched">
+            Author must be less than 5 characters
+          </div>
+        </div>
+      <button class="btn" [disabled]="!filterGroup.valid" [class.disabled]="!filterGroup.valid">Apply</button>
+    </form>
+  </div>
+</section>
