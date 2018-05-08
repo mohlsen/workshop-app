@@ -1,11 +1,7 @@
+<div class="collection">
+  <div class="collection-item" *ngFor="let video of videoData; index as i" (click)="onSelectVideo(i)" [class.selected]="selectedVideo === i">
+      <strong>Title: {{video.title}}</strong><br>
+      <span>Author: {{video.author}}</span>
+  </div>
+</div>
 
-<ul>
-  <li class="collection-item" *ngFor="let video of videoData; index as i" (click)="onSelectVideo(i)" [class.selected]="selectedVideo === i">
-    <strong>Title: {{video.title}}</strong><br>
-    <span>Author: {{video.author}}</span>
-  </li>
-</ul>
-
-
-<!-- * Modify the video list template to display each video's title and
-  author using `*ngFor`. -->
