@@ -1,5 +1,5 @@
 <div class="collection">
-  <div class="collection-item" *ngFor="let video of videoData; index as i" (click)="onSelectVideo(i)" [class.selected]="selectedVideo === i">
+  <div class="collection-item" *ngFor="let video of videoData" (click)="onSelectVideo(video)" [class.selected]="selectedVideo === video">
       <strong>Title: {{video.title}}</strong><br>
       <span>Author: {{video.author}}</span>
   </div>

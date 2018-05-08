@@ -1,16 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 
-interface IViewDetails {
+interface IVideoViewDetails {
   age: number;
   region: string;
   date: string;
 }
 
-interface IDemoData {
+interface IVideo {
   title: string;
   author: string;
   id: string;
-  viewDetails: IViewDetails[];
+  viewDetails: IVideoViewDetails[];
 }
 
 @Component({
@@ -20,16 +20,16 @@ interface IDemoData {
 })
 export class VideoListComponent implements OnInit {
 
-  videoData: IDemoData[] = data;
-  selectedVideo: number | undefined;
+  videoData: IVideo[] = data;
+  selectedVideo: IVideo | undefined;
 
   constructor() { }
 
   ngOnInit() {
   }
 
-  onSelectVideo = (index: number) => {
-    this.selectedVideo = index;
+  onSelectVideo = (video: IVideo) => {
+    this.selectedVideo = video;
   }
 
 }
