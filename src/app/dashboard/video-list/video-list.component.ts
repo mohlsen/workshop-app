@@ -1,17 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-interface IVideoViewDetails {
-  age: number;
-  region: string;
-  date: string;
-}
-
-interface IVideo {
-  title: string;
-  author: string;
-  id: string;
-  viewDetails: IVideoViewDetails[];
-}
+import { IVideo } from '../types';
 
 @Component({
   selector: 'app-video-list',
