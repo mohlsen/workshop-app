@@ -1,8 +1,8 @@
 
 <ul>
-  <li class="collection-item" *ngFor="let demo of demoData; index as i">
-    <h5>Title: {{demo.title}}</h5>
-    <span>Author: {{demo.author}}</span>
+  <li class="collection-item" *ngFor="let video of videoData; index as i" (click)="onSelectVideo(i)" [class.selected]="selectedVideo === i">
+    <strong>Title: {{video.title}}</strong><br>
+    <span>Author: {{video.author}}</span>
   </li>
 </ul>
 
