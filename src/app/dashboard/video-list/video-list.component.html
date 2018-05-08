@@ -1,5 +1,5 @@
 <div class="collection">
-  <div class="collection-item" *ngFor="let video of videoData" (click)="onSelectVideo(video)" [class.selected]="selectedVideo === video">
+  <div class="collection-item" *ngFor="let video of (videoData | async)" (click)="onSelectVideo(video)" [class.selected]="selectedVideo === video">
     <app-video-item [video]="video"></app-video-item>
   </div>
 </div>
