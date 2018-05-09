@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter} from '@angular/core';
+import { Component} from '@angular/core';
 
 import { IVideo } from '../types';
 import { VideoDataService } from '../../video-data.service';
@@ -10,11 +10,9 @@ import { map } from 'rxjs/operators';
   templateUrl: './video-list.component.html',
   styleUrls: ['./video-list.component.css']
 })
-export class VideoListComponent implements OnInit {
+export class VideoListComponent {
 
   videoData: Observable<IVideo[]>;
-  selectedVideo: IVideo | undefined;
-  @Output() videoSelected = new EventEmitter<IVideo>();
 
   constructor(videoDataService: VideoDataService) {
     this.videoData = videoDataService.loadVideos().pipe(
@@ -25,14 +23,6 @@ export class VideoListComponent implements OnInit {
         });
       })
     );
-  }
-
-  ngOnInit() {
-  }
-
-  onSelectVideo = (video: IVideo) => {
-    this.selectedVideo = video;
-    this.videoSelected.emit(video);
   }
 
 }

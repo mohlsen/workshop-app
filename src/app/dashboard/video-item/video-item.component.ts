@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 import { IVideo } from '../types';
 
@@ -7,13 +7,11 @@ import { IVideo } from '../types';
   templateUrl: './video-item.component.html',
   styleUrls: ['./video-item.component.css']
 })
-export class VideoItemComponent implements OnInit {
+export class VideoItemComponent {
 
   @Input() video: IVideo;
 
   constructor() { }
 
-  ngOnInit() {
-  }
 
 }

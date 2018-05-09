@@ -1,18 +1,23 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component } from '@angular/core';
 import { IVideo } from '../types';
+import { Observable } from 'rxjs';
+import { ActivatedRoute } from '@angular/router';
+import { pluck } from 'rxjs/operators';
 
 @Component({
   selector: 'app-video-player',
   templateUrl: './video-player.component.html',
   styleUrls: ['./video-player.component.css']
 })
-export class VideoPlayerComponent implements OnInit {
+export class VideoPlayerComponent {
 
-  constructor() { }
+  videoId: Observable<string>;
 
-  @Input() video: IVideo;
-
-  ngOnInit() {
+  constructor(route: ActivatedRoute) {
+    this.videoId = route.params.pipe(
+      pluck<{}, string>('videoId')
+    );
   }
+
 
 }

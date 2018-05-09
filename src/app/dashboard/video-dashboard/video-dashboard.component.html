@@ -1,10 +1,9 @@
 <div class="row">
   <div class="col m3">
-    <!-- <app-video-list (videoSelected)="setVideo($event)"></app-video-list> -->
-    <app-video-list (videoSelected)=" videoSelected = $event"></app-video-list>
+    <app-video-list></app-video-list>
   </div>
   <div class="col m6">
-    <app-video-player [video]="videoSelected"></app-video-player>
+    <router-outlet></router-outlet>
   </div>
   <div class="col m3">
     <app-stat-filters></app-stat-filters>

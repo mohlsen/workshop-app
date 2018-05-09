@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
@@ -6,7 +6,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
   templateUrl: './stat-filters.component.html',
   styleUrls: ['./stat-filters.component.css']
 })
-export class StatFiltersComponent implements OnInit {
+export class StatFiltersComponent {
 
   filterGroup: FormGroup;
 
@@ -17,13 +17,11 @@ export class StatFiltersComponent implements OnInit {
       author: ['', [Validators.maxLength(5)]]
     });
 
+    this.filterGroup.valueChanges.subscribe(val => console.log(val));
+
   }
 
   applyFilter(): void {
     console.log('Form Submitted', this.filterGroup.value);
   }
-
-  ngOnInit() {
-  }
-
 }
