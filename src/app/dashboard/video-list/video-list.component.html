@@ -1,5 +1,5 @@
 <div class="collection">
-  <div class="collection-item" *ngFor="let video of (videoData | async)" [routerLink]="video.id" routerLinkActive="active">
+  <div class="collection-item" *ngFor="let video of (videoData | async)" [routerLink]="video.id" routerLinkActive="selected">
     <app-video-item [video]="video"></app-video-item>
   </div>
 </div>
