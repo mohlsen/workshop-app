@@ -12,4 +12,10 @@ export class VideoDataService {
   loadVideos() {
     return this.http.get<IVideo[]>('https://api.angularbootcamp.com/videos');
   }
+
+  //
+
+  loadVideo(id: string) {
+    return this.http.get<IVideo>(`https://api.angularbootcamp.com/videos/${id}`);
+  }
 }

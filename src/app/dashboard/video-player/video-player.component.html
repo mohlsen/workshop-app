@@ -1,3 +1,4 @@
-<div *ngIf="videoId" class="card-panel">
-  {{videoId | async}}
+<div *ngIf="video" class="card-panel">
+  <strong>{{(video | async)?.title}}</strong>
+  <div>{{(video | async)?.author}}</div>
 </div>
